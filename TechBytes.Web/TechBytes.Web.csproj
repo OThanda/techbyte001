@@ -86,12 +86,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Filters\LogActionFilter.cs" />
     <Compile Include="Controllers\V1\BooksController.cs" />
     <Compile Include="Controllers\V3\BooksController.cs" />
     <Compile Include="Dispatchers\VersionControllerSelector.cs" />
+    <Compile Include="Filters\LogActionFilterProvider.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Loggers\IRecorder.cs" />
+    <Compile Include="Loggers\Recorder.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resolvers\UnityResolver.cs" />
