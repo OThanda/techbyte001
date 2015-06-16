@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Web.Http;
 using Newtonsoft.Json;
 using TechBytes.Web.Models;
@@ -29,10 +30,14 @@ namespace TechBytes.Web.Controllers.V3
 
             var serializedData = JsonConvert.SerializeObject(books);
 
-            return new HttpResponseMessage(HttpStatusCode.OK)
+            var response = new HttpResponseMessage(HttpStatusCode.OK)
             {
-                Content = new StringContent(serializedData)
+                Content = new StringContent(serializedData),
             };
+
+            response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            return response;
         }
 
         private List<Book> GetAll()

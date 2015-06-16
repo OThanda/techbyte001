@@ -34,15 +34,11 @@ namespace TechBytes.Web
                 defaults: new { isbn = RouteParameter.Optional }
             );
 
+            // Add a custom IHttpControllerSelector
             config.Services.Replace(typeof(IHttpControllerSelector), new VersionControllerSelector(config));
 
-            // Add Unity filters provider
+            // Add a custom IFilterProvider
             config.Services.Replace(typeof(System.Web.Http.Filters.IFilterProvider), new LogActionFilterProvider(unityContainer));
-
-            //var providers = config.Services.GetFilterProviders().ToList();
-            //config.Services.Add(typeof(System.Web.Http.Filters.IFilterProvider), new LogActionFilterProvider(unityContainer));
-            //var defaultprovider = providers.First(p => p is ActionDescriptorFilterProvider);
-            //config.Services.Remove(typeof(System.Web.Http.Filters.IFilterProvider), defaultprovider);
         }
     }
 }

@@ -20,17 +20,17 @@ namespace TechBytes.Web.Filters
         {
             if (actionContext.ActionArguments.Any())
             {
-                var modelBook = actionContext.ActionArguments["model"];
-                if (null == modelBook)
-                {
+                if (actionContext.ActionArguments.ContainsKey("isbn"))
+                {                
                     var isbn = actionContext.ActionArguments["isbn"];
                     if (null != isbn)
                     {
                         MyRecorder.Write(String.Format("A request is made for a book with ISBN {0}", isbn));
                     }
-                }
-                else
+                }               
+                else if (actionContext.ActionArguments.ContainsKey("model"))
                 {
+                    var modelBook = actionContext.ActionArguments["model"];                   
                     var book = modelBook as Book;
                     if (null != book)
                     {
