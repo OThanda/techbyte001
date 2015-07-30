@@ -1,0 +1,6 @@
+TechBytes.Web.v12.suo
+.nuget/*
+packages/*
+TechBytes.Web/bin/*
+*.suo
+TechBytes.Web/obj/*
