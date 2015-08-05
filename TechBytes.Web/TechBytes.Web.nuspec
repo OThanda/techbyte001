@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>TechBytes01</id>
+    <id>TechBytes.Web.WebDeploy</id>
     <version>1.0</version>
     <authors>OThanda</authors>
     <owners>OThanda</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Tech Bytes 01 TeamCity and Octopus Setup</description>
-    <tags>TechBytes01</tags>
+    <description>Tech Bytes TeamCity and Web Deploy Test</description>
+    <tags>TechBytes.Web</tags>
   </metadata>
 </package>

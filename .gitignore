@@ -4,3 +4,4 @@ packages/*
 TechBytes.Web/bin/*
 *.suo
 TechBytes.Web/obj/*
+.nuget/NuGet.targets
